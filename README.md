@@ -1,3 +1,10 @@
+# Learning with Long-term Remembering: Following the Lead of Mixed Stochastic Gradient
+Authors: Yunhui Guo*, Mingrui Liu*, Tianbao Yang, Tajana Rosing      
+*Equal contribution
+
+## Abstract
+Current deep neural networks  can achieve remarkable performance on a single task. However, when the deep neural network is continually trained on a sequence of tasks, it seems to gradually forget the previous learned knowledge. This phenomenon is referred to as catastrophic forgetting and motivates the field called lifelong learning. The central question in lifelong learning is how to enable deep neural networks to maintain performance on old tasks while learning a new task. In this paper, we introduce a novel and effective lifelong learning algorithm, called MixEd stochastic GrAdient (MEGA), which allows deep neural networks to acquire the ability of retaining performance on old tasks while learning new tasks. MEGA modulates the balance between old tasks and the new task by integrating the current gradient with the gradient computed on a small reference episodic memory. Extensive experimental results show that the proposed MEGA algorithm significantly advances the state-of-the-art on all four commonly used lifelong learning benchmarks, reducing the error by up to 18%. 
+
 ## Requirements
 
 TensorFlow >= v1.9.0.
@@ -7,7 +14,7 @@ The code is based on https://github.com/facebookresearch/agem.
 
 To replicate the results of the paper on a particular dataset, execute (see the Note below for downloading the CUB and AWA datasets):
 ```bash
-$ ./replicate_results_iclr20.sh <DATASET> <THREAD-ID> 
+$ ./replicate_results.sh <DATASET> <THREAD-ID> 
 ```
 
 Example runs are:
@@ -28,3 +35,19 @@ For CUB and AWA experiments, download the dataset prior to running the above scr
 $ ./download_cub_awa.sh
 ```
 The plotting code is provided under the folder `plotting_code/`. Update the paths in the plotting code accordingly.
+
+### Results on MNIST, CIFAR, AWA, CUB
+
+![mnist](https://drive.google.com/open?id=1PBbTV__ev3QELbbketO-hGExa-4LeQx7)
+
+### CITE:
+
+If you find this repository useful in your own research, please consider citing:
+```
+@article{guo2019learning,
+  title={Learning with Long-term Remembering: Following the Lead of Mixed Stochastic Gradient},  
+  author={Guo, Yunhui and Liu, Mingrui and Yang, Tianbao and Rosing, Tajana},
+  journal={arXiv preprint arXiv:1909.11763},
+  year={2019}
+}
+```
