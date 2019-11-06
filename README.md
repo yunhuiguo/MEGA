@@ -1,4 +1,5 @@
-# Learning with Long-term Remembering: Following the Lead of Mixed Stochastic Gradient
+# Learning with Long-term Remembering: Following the Lead of Mixed Stochastic Gradient 
+### https://arxiv.org/abs/1909.11763
 Authors: Yunhui Guo*, Mingrui Liu*, Tianbao Yang, Tajana Rosing      
 *Equal contribution
 
@@ -36,11 +37,28 @@ $ ./download_cub_awa.sh
 ```
 The plotting code is provided under the folder `plotting_code/`. Update the paths in the plotting code accordingly.
 
-### Results on MNIST, CIFAR, AWA, CUB
+### Results on MNIST
+<p align="center">
+<img src="https://github.com/yunhuiguo/MEGA/blob/master/figs/mnist_average_accuracy.png"  width="400" height="200">
+  
+### Results on CIFAR
+<p align="center">
+<img  src="https://github.com/yunhuiguo/MEGA/blob/master/figs/cifar_average_accuracy.png"  width="400" height="200">
+  
+### Results on CUB
+<p align="center">
+<img src="https://github.com/yunhuiguo/MEGA/blob/master/figs/cub_average_accuracy.png"  width="400" height="200">
 
-![mnist](https://drive.google.com/open?id=1PBbTV__ev3QELbbketO-hGExa-4LeQx7)
+  
+### Results on AWA
+<p align="center">
+<img src="https://github.com/yunhuiguo/MEGA/blob/master/figs/awa_average_accuracy.png"  width="400" height="200">
 
-### CITE:
+### Legend
+<p align="center">
+<img src="https://github.com/yunhuiguo/MEGA/blob/master/figs/aa_legend.png">
+
+
 
 If you find this repository useful in your own research, please consider citing:
 ```
