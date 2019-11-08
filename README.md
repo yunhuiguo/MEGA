@@ -24,9 +24,9 @@ $ ./replicate_results.sh MNIST 4     /* Train MEGA on MNIST */
 
 $ ./replicate_results.sh CIFAR 3     /* Train MEGA on CIFAR */
 
-$ ./replicate_results.sh CUB 3    /* Train MEGA on CUB */
+$ ./replicate_results.sh CUB 3 0   /* Train MEGA on CUB */
 
-$ ./replicate_results.sh AWA 7     /* Train MEGA on AWA */
+$ ./replicate_results.sh AWA 7 0    /* Train MEGA on AWA */
 ```
 
 ### Note
