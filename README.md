@@ -1,10 +1,13 @@
-# Learning with Long-term Remembering: Following the Lead of Mixed Stochastic Gradient 
-### https://arxiv.org/abs/1909.11763
+# Improved Schemes for Episodic Memory-based Lifelong Learning
+### NeurIPS 2020 (Spotlight)
+
+### https://arxiv.org/abs/1909.11763 
+
 Authors: Yunhui Guo*, Mingrui Liu*, Tianbao Yang, Tajana Rosing      
 *Equal contribution
 
 ## Abstract
-Current deep neural networks  can achieve remarkable performance on a single task. However, when the deep neural network is continually trained on a sequence of tasks, it seems to gradually forget the previous learned knowledge. This phenomenon is referred to as catastrophic forgetting and motivates the field called lifelong learning. The central question in lifelong learning is how to enable deep neural networks to maintain performance on old tasks while learning a new task. In this paper, we introduce a novel and effective lifelong learning algorithm, called MixEd stochastic GrAdient (MEGA), which allows deep neural networks to acquire the ability of retaining performance on old tasks while learning new tasks. MEGA modulates the balance between old tasks and the new task by integrating the current gradient with the gradient computed on a small reference episodic memory. Extensive experimental results show that the proposed MEGA algorithm significantly advances the state-of-the-art on all four commonly used lifelong learning benchmarks, reducing the error by up to 18%. 
+Current deep neural networks can achieve remarkable performance on a singletask. However, when the deep neural network is continually trained on a sequenceof tasks, it seems to gradually forget the previous learned knowledge. This phe-nomenon is referred to ascatastrophic forgettingand motivates the field calledlifelong learning. Recently, episodic memory based approaches such as GEM [1]and A-GEM [2] have shown remarkable performance. In this paper, we providethe first unified view of episodic memory based approaches from an optimization’sperspective. This view leads to two improved schemes for episodic memory basedlifelong learning, called MEGA-I and MEGA-II. MEGA-I and MEGA-II modulatethe balance between old tasks and the new task by integrating the current gradientwith the gradient computed on the episodic memory. Notably, we show that GEMand A-GEM are degenerate cases of MEGA-I and MEGA-II which consistentlyput the same emphasis on the current task, regardless of how the loss changesover time. Our proposed schemes address this issue by using novel loss-balancingupdating rules, which drastically improve the performance over GEM and A-GEM.Extensive experimental results show that the proposed schemes significantly ad-vance the state-of-the-art on four commonly used lifelong learning benchmarks,reducing the error by up to 18%.
 
 ## Requirements
 
