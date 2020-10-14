@@ -1,11 +1,9 @@
-# Improved Schemes for Episodic Memory-based Lifelong Learning
+# Improved Schemes for Episodic Memory-based Lifelong Learning [[arXiv]](https://arxiv.org/abs/1909.11763)
 
 Authors: Yunhui Guo*, Mingrui Liu*, Tianbao Yang, Tajana Rosing      
 *Equal contribution
 
 ### NeurIPS 2020 (Spotlight)
-
-### https://arxiv.org/abs/1909.11763 
 
 ```
 @article{guo2019learning,
