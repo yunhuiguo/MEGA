@@ -6,11 +6,12 @@ Authors: Yunhui Guo*, Mingrui Liu*, Tianbao Yang, Tajana Rosing
 ### NeurIPS 2020 (Spotlight)
 
 ```
-@article{guo2019learning,
-  title={Learning with Long-term Remembering: Following the Lead of Mixed Stochastic Gradient},  
+@article{guo2020improved,
+  title={Improved Schemes for Episodic Memory-based Lifelong Learning},
   author={Guo, Yunhui and Liu, Mingrui and Yang, Tianbao and Rosing, Tajana},
-  journal={arXiv preprint arXiv:1909.11763},
-  year={2019}
+  journal={Advances in Neural Information Processing Systems},
+  volume={33},
+  year={2020}
 }
 ```
 
