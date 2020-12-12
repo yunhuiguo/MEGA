@@ -356,7 +356,41 @@ def train_task_sequence(model, sess, args):
                         episodic_images[mem_index] = er_x
                         episodic_labels[mem_index] = er_y_
                         count_cls[cls] = (count_cls[cls] + 1) % args.mem_size
+                   
+                elif model.imp_method == 'MEGAD':
+                    if task == 0:
+                        # Normal application of gradients
+                        _, loss = sess.run([model.train_first_task, model.agem_loss], feed_dict=feed_dict)
+                    else:
+                    
+                        ## Compute and store the reference gradients on the previous tasks
+                        if episodic_filled_counter <= args.eps_mem_batch:
+                            mem_sample_mask = np.arange(episodic_filled_counter)
+                        else:
+                            # Sample a random subset from episodic memory buffer
+                            mem_sample_mask = np.random.choice(episodic_filled_counter, args.eps_mem_batch, replace=False) # Sample without replacement so that we don't sample an example more than once
 
+                        # Store the reference gradient
+                        _, ref_loss = sess.run([model.store_ref_grads, model.store_ref_loss], feed_dict={model.x: episodic_images[mem_sample_mask], model.y_: episodic_labels[mem_sample_mask],
+                            model.keep_prob: 1.0, model.output_mask: logit_mask, model.train_phase: True})
+
+                        # Compute the gradient for current task and project if need be
+                        _, loss = sess.run([model.train_subseq_tasks, model.agem_loss], feed_dict=feed_dict)
+                    
+
+                    # Put the batch in the ring buffer
+                    for er_x, er_y_ in zip(train_x[offset:offset+residual], train_y[offset:offset+residual]):
+                        cls = np.unique(np.nonzero(er_y_))[-1]
+                        # Write the example at the location pointed by count_cls[cls]
+                        cls_to_index_map = cls
+                        with_in_task_offset = args.mem_size  * cls_to_index_map
+                        mem_index = count_cls[cls] + with_in_task_offset + episodic_filled_counter
+                        episodic_images[mem_index] = er_x
+                        episodic_labels[mem_index] = er_y_
+                        count_cls[cls] = (count_cls[cls] + 1) % args.mem_size
+                        
+                        
+                        
                 elif model.imp_method == 'RWALK':
                     # If first iteration of the first task then set the initial value of the running fisher
                     if task == 0 and iters == 0:
